@@ -27,7 +27,7 @@ describe('Definition') do
   describe("#example") do
     it("returns a phrase or sentence that correctly uses the word being described in context") do
       test_definition = Definition.new({:description => "the principle or ideal of just dealing or right action", :synonyms => ["right", "equity"], :antonyms => ["wrong", "inequity"], :example => "The people of St. Paul, MN, demand justice after the senseless murder of another black man by police."})
-      expect(test_definition.antonyms()).to(eq("The people of St. Paul demand justice after the senseless murder of another black man by police."))
+      expect(test_definition.example()).to(eq("The people of St. Paul, MN, demand justice after the senseless murder of another black man by police."))
     end
   end
 end

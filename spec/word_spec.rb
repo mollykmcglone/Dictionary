@@ -22,9 +22,9 @@ describe(Word) do
   end
 
   describe("#meanings") do
-    it("returns an array of definitions for the word that is empty at first")
+    it("returns an array of definitions for the word that is empty at first") do
       test_word = Word.new("Justice")
-      expect(test_word.definitions()).to(eq([]))
+      expect(test_word.meanings()).to(eq([]))
     end
   end
 
@@ -64,7 +64,8 @@ describe(Word) do
     it("adds a new definition to a word") do
       test_word = Word.new("Justice")
       test_definition = Definition.new({:description => "the principle or ideal of just dealing or right action", :synonyms => ["right", "equity"], :antonyms => ["wrong", "inequity"], :example => "The people of St. Paul, MN, demand justice after the senseless murder of another black man by police."})
-      expect(test_word.definitions()).to(eq([test_definition]))
+      test_word.add_definition(test_definition)
+      expect(test_word.meanings()).to(eq([test_definition]))
     end
   end
 end

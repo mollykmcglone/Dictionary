@@ -4,7 +4,7 @@
 
 <ol>
   <% @word.meanings().each() do |meaning| %>
-    <li><%= meaning.description() %><%= meaning.synonyms() %><%= meaning.antonyms() %><%= meaning.example() %></a></li>
+    <li><%= meaning.description() %>. Synonyms: <%= meaning.synonyms() %> Antonyms: <%= meaning.antonyms() %> "<%= meaning.example() %>"</a></li>
   <% end %>
 <ol>
 
@@ -15,11 +15,13 @@
   <label for="description">What does the word mean?</label>
   <input id="description" name="description" type="text">
   <label for="synonym">What word or words mean something similar to this definition of <%= @word.name() %>?</label>
-  <input id="synonym" name="synonym" type="text">
+  <input id="synonym" multiple="multiple" name="synonym" type="text">
   <label for="antonym">What word or words mean the opposite of this definition of <%= @word.name() %>?</label>
-  <input id="antonym" name="antonym" type="text">
+  <input id="antonym" multiple="multiple" name="antonym" type="text">
   <label for="example">Based on this definition, how would you use this word in a sentence?:</label>
   <input id="example" name="example" type="text">
 
   <button type="submit" id="add_definition">Submit</button>
 </form>
+
+<a href="/">Return to Dictionary</a>
