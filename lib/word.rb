@@ -3,7 +3,7 @@ class Word
 
   define_method(:initialize) do |name|
     @name = name
-    @definitions = []
+    @meanings = []
     @id = @@words.length().+(1)
   end
 
@@ -11,12 +11,12 @@ class Word
     @name
   end
 
-  define_method(:id) do
-    @id
+  define_method(:meanings) do
+    @meanings
   end
 
-  define_method(:definitions) do
-    @definitions
+  define_method(:id) do
+    @id
   end
 
   define_method(:all) do
@@ -42,6 +42,6 @@ class Word
   end
 
   define_method(:add_definition) do |definition|
-    @definitions.push(definition)
+    @meanings.push(definition)
   end
 end

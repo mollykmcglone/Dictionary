@@ -1,0 +1,9 @@
+<h2>Welcome! Here are all the words in your personal dictionary. Click on a word to learn more or add to its definitions. Use the form below to add new words to your dictionary.</h2>
+
+<h3> Your words: </h3>
+
+<ul>
+  <% @words.each() do |word| %>
+    <li><a href="/words/<%= word.id() %>"><%= word.name() %></a></li>
+  <% end %>
+<ul>
