@@ -4,6 +4,14 @@
 
 <ul>
   <% @words.each() do |word| %>
-    <li><a href="/words/<%= word.id() %>"><%= word.name() %></a></li>
+    <li><a href="/<%= word.id() %>"><%= word.name() %></a></li>
   <% end %>
 <ul>
+
+<h2>Add a new word to your dictionary:</h2>
+
+<form action="/add_word" method="post">
+  <label for="word_name">What word do you want to add?</label>
+  <input id="word-name" name="word_name" type="text">
+  <button type="submit" id="add-word">Add Word</button>
+</form>

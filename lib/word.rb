@@ -19,15 +19,15 @@ class Word
     @id
   end
 
-  define_method(:all) do
+  define_singleton_method(:all) do
     @@words
   end
 
-  define_method(:save) do
+  define_singleton_method(:save) do
     @@words.push(self)
   end
 
-  define_method(:clear) do
+  define_singleton_method(:clear) do
     @@words = []
   end
 
