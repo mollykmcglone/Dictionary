@@ -1,8 +1,10 @@
 <h1><%= @word.name() %></h1>
+
 </h2>Full Definition of <%= @word.name() %> :</h2>
+
 <ol>
   <% @word.meanings().each() do |meaning| %>
-    <li><a href="/definitions/<%= meaning.id() %>"><%= meaning.description() %><%= meaning.synonyms() %><%= meaning.antonyms() %><%= meaning.example() %></a></li>
+    <li><%= meaning.description() %><%= meaning.synonyms() %><%= meaning.antonyms() %><%= meaning.example() %></a></li>
   <% end %>
 <ol>
 

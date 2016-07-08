@@ -23,7 +23,7 @@ class Word
     @@words
   end
 
-  define_singleton_method(:save) do
+  define_method(:save) do
     @@words.push(self)
   end
 
