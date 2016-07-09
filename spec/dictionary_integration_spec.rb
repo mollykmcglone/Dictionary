@@ -19,7 +19,7 @@ describe('view the definition(s) of a word from index path', {:type => :feature}
     click_button('Add Word')
     expect(page).to have_content('Capitalism')
     click_link('Capitalism')
-    expect(page).to have_content('Full Definition of Capitalism')
+    expect(page).to have_content('Add a new definition to Capitalism')
   end
 end
 
@@ -30,7 +30,7 @@ describe('add a definition to a word from the word path', {:type => :feature}) d
     click_button('Add Word')
     expect(page).to have_content('Freedom')
     click_link('Freedom')
-    expect(page).to have_content('Full Definition of Freedom')
+    expect(page).to have_content('Add a new definition to Freedom')
     fill_in('description', :with => 'the state of being free from the control or power of another')
     fill_in('synonym', :with => ['emancipation', 'autonomy'])
     fill_in('antonym', :with => ['subjection', 'dependence'])
@@ -47,7 +47,7 @@ describe('return home from word path', {:type => :feature}) do
     click_button('Add Word')
     expect(page).to have_content('Joy')
     click_link('Joy')
-    expect(page).to have_content('Full Definition of Joy')
+    expect(page).to have_content('Add a new definition of Joy')
     fill_in('description', :with => 'a feeling of great happiness')
     fill_in('synonym', :with => ['delight', 'bliss'])
     fill_in('antonym', :with => ['sadness', 'misery'])

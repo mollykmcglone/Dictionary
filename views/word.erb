@@ -1,27 +1,32 @@
-<h1><%= @word.name() %></h1>
-
-</h2>Full Definition of <%= @word.name() %> :</h2>
+<h1><%= @word.name() %>:</h1>
 
 <ol>
   <% @word.meanings().each() do |meaning| %>
-    <li><%= meaning.description() %>. Synonyms: <%= meaning.synonyms() %> Antonyms: <%= meaning.antonyms() %> "<%= meaning.example() %>"</a></li>
+    <li><%= meaning.description() %>.<br> Synonyms: <%= meaning.synonyms() %> Antonyms: <%= meaning.antonyms() %> "<%= meaning.example() %>"</a></li>
   <% end %>
 <ol>
 
+<br>
 <h2>Add a new definition to <%= @word.name() %>:</h2>
-
 <form action="/definitions" method="post">
   <input id="word_id" name="word_id" type="hidden" value="<%=@word.id() %>">
-  <label for="description">What does the word mean?</label>
-  <input id="description" name="description" type="text">
-  <label for="synonym">What word or words mean something similar to this definition of <%= @word.name() %>?</label>
-  <input id="synonym" multiple="multiple" name="synonym" type="text">
-  <label for="antonym">What word or words mean the opposite of this definition of <%= @word.name() %>?</label>
-  <input id="antonym" multiple="multiple" name="antonym" type="text">
-  <label for="example">Based on this definition, how would you use this word in a sentence?:</label>
-  <input id="example" name="example" type="text">
-
+  <div class="form-group">
+    <label for="description">What does the word mean?</label>
+    <input id="description" name="description" type="text">
+  </div>
+  <div class="form-group">
+    <label for="synonym">What word or words mean something similar to this definition of <%= @word.name() %>?</label>
+    <input id="synonym" multiple="multiple" name="synonym" type="text">
+  </div>
+  <div class="form-group">
+    <label for="antonym">What word or words mean the opposite of this definition of <%= @word.name() %>?</label>
+    <input id="antonym" multiple="multiple" name="antonym" type="text">
+  </div>
+  <div class="form-group">
+    <label for="example">Based on this definition, how would you use this word in a sentence?:</label>
+    <input id="example" name="example" type="text">
+  <div>
   <button type="submit" id="add_definition">Submit</button>
 </form>
-
+<br><br>
 <a href="/">Return to Dictionary</a>

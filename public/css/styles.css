@@ -1,0 +1,24 @@
+.jumbotron {
+  text-align: center;
+  color: black;
+}
+
+h1 {
+  size: 4em;
+}
+
+img {
+  float: left;
+  max-width: 25%;
+  margin-right: 20px;
+}
+
+@media (max-width: 992px){
+  img {
+    display: none;
+  }
+}
+
+.btn {
+  font-size: 2em;
+}

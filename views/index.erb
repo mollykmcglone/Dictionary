@@ -1,18 +1,22 @@
-<h2>Welcome! Here are all the words in your personal dictionary. Click on a word to learn more or add to its definitions. Use the form below to add new words to your dictionary.</h2>
+<h2>Welcome to your dictionary!  Click on a word to learn more or add to its definition. Want to add a new word? Use the form below.</h2>
 
-<h3> Your words: </h3>
-
+<h3>Your words:
+<% if @words == [] %>
+You don't have any words in your dictionary yet.  Add some!
+<% else %>
 <ul>
   <% @words.each() do |word| %>
     <li><a href="/<%= word.id() %>"><%= word.name() %></a></li>
   <% end %>
 <ul>
+</h3>
+<% end %>
 
-<h2>Add a new word to your dictionary:</h2>
+<h2>Add a new word:</h2>
 
 <form action="/word" method="post">
-  <label for="word_name">What word do you want to add?</label>
-  <input name="word_name" type="text" id="word-name">
+  <label for="word_name">What do you want to add?</label>
+  <input name="word_name" type="text" id="word-name" required>
 
-  <button type="submit" id="add_word">Add Word</button>
+  <button type="submit" id="add_word">Submit</button>
 </form>
